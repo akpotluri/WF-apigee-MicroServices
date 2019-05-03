@@ -1,11 +1,9 @@
-FROM openjdk:8u111-jdk-alpine
+FROM java:8-jdk-alpine
 
-COPY ./target/example.smallest-0.0.1-SNAPSHOT.jar /usr/app/
+COPY ./target/demo-docker-0.0.1-SNAPSHOT.jar /usr/app/
 
 WORKDIR /usr/app
 
-RUN sh -c 'touch example.smallest-0.0.1-SNAPSHOT.jar'
-EXPOSE 19000
+RUN sh -c 'touch demo-docker-0.0.1-SNAPSHOT.jar'
 
-ENTRYPOINT ["java","-jar","example.smallest-0.0.1-SNAPSHOT.jar"]
-
+ENTRYPOINT ["java","-jar","demo-docker-0.0.1-SNAPSHOT.jar"]
